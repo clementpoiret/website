@@ -1,8 +1,9 @@
-import * as THREE from 'three'
-import React, { useRef, useState } from 'react'
-import { useFrame, ThreeElements } from '@react-three/fiber'
+import React, { useRef, useState } from "react"
 
-export default function Box(props: ThreeElements['mesh']) {
+import { useFrame, ThreeElements } from "@react-three/fiber"
+import * as THREE from "three"
+
+export default function Box(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!)
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
@@ -14,9 +15,10 @@ export default function Box(props: ThreeElements['mesh']) {
       scale={clicked ? 1.5 : 1}
       onClick={(event) => click(!clicked)}
       onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}>
+      onPointerOut={(event) => hover(false)}
+    >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
     </mesh>
   )
 }
