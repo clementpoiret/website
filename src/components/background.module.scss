@@ -9,8 +9,9 @@
 
 .quote {
   position: absolute;
-  top: 56vh;
-  width: 100%;
+  top: 56%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   z-index: 42;
   display: block;
