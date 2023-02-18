@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useRef } from "react"
 
 import { useFrame, ThreeElements } from "@react-three/fiber"
 import {
@@ -10,23 +10,25 @@ import {
 } from "three"
 
 import Letter from "./atoms/letter"
-import BasicLine, { GradientLine } from "./atoms/line"
+import BasicLine, { MultipleGradientLines } from "./atoms/line"
 
 export default function LineArt(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!)
 
-  const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
+  // const [hovered, hover] = useState(false)
+  // const [clicked, click] = useState(false)
 
   const logicLine = BasicLine(
     [new Vector3(0, 0, 0), new Vector3(-4, 16, 0)],
     0x212121
   )
 
-  const creativeLine = GradientLine(
-    [new Vector3(0, 0, 0), new Vector3(6, 7, 0), new Vector3(8, 14, 0)],
-    0xffffff,
-    0x212121
+  const creativeLines = MultipleGradientLines(
+    8, // Number of lines
+    new Vector3(0, 0, 0), // Start point
+    new Vector3(8, 14, 0), // End point
+    0xeceff1, // Color 1
+    0x212121 // Color 2
   )
 
   // Add a plain circle in 0, 0, 0 visible from both sides
@@ -85,14 +87,17 @@ export default function LineArt(props: ThreeElements["mesh"]) {
     <mesh
       {...props}
       ref={ref}
-      scale={clicked ? [2, 2, 2] : [1, 1, 1]}
-      onClick={(e) => click(!clicked)}
-      onPointerOver={(e) => hover(true)}
-      onPointerOut={(e) => hover(false)}
+      // scale={clicked ? [2, 2, 2] : [1, 1, 1]}
+      // onClick={(e) => click(!clicked)}
+      // onPointerOver={(e) => hover(true)}
+      // onPointerOut={(e) => hover(false)}
     >
       <primitive object={circle} />
       <primitive object={logicLine} />
-      <primitive object={creativeLine} />
+
+      {creativeLines.map((line, i) => (
+        <primitive object={line} key={i} />
+      ))}
 
       {letterObjects.map((letter, i) => (
         <primitive object={letter} key={i} />
