@@ -20,6 +20,8 @@ export default function Background() {
         <LineArt position={[0, 0, 0]} />
       </Canvas>
       <p className={styles.quote}>
+        <em>The shortest path is not always the fastest.</em>
+        <br />
         <strong>Logic</strong> whill get you from A to Z.
         <br />
         <strong>Creativity</strong> will get you everywhere.

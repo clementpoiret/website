@@ -3,6 +3,7 @@ import {
   Color,
   Line,
   LineBasicMaterial,
+  QuadraticBezierCurve3,
   ShaderMaterial,
   Vector3,
 } from "three"
@@ -62,6 +63,15 @@ const MultipleGradientLines = (
   const y = (to.y - from.y) / 3
 
   for (let i = 0; i < numberOfLines; i++) {
+    // Set the second color to be green 2/8 of the time
+    // and red 1/8 of the time
+    const randomColor = Math.random()
+    if (randomColor < 2 / 8) {
+      color2 = 0x2e7d32
+    } else if (randomColor < 3 / 8) {
+      color2 = 0xc62828
+    }
+
     const randomPoint1 = new Vector3(
       Math.random() * 8 - 4 + x,
       Math.random() * 2 - 1 + y,
@@ -81,5 +91,19 @@ const MultipleGradientLines = (
   return lines
 }
 
+const BezierCurve = (position: Vector3[], color: number) => {
+  const curve = new QuadraticBezierCurve3(position[0], position[1], position[2])
+
+  const points = curve.getPoints(50)
+  const geometry = new BufferGeometry().setFromPoints(points)
+
+  const material = new LineBasicMaterial({ color: color })
+
+  // Create the final object to add to the scene
+  const curveObject = new Line(geometry, material)
+
+  return curveObject
+}
+
 export default BasicLine
-export { GradientLine, MultipleGradientLines }
+export { BezierCurve, GradientLine, MultipleGradientLines }

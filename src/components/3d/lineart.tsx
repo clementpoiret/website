@@ -1,16 +1,11 @@
 import React, { useRef } from "react"
 
 import { useFrame, ThreeElements } from "@react-three/fiber"
-import {
-  CircleGeometry,
-  DoubleSide,
-  Mesh,
-  MeshBasicMaterial,
-  Vector3,
-} from "three"
+import { Vector3 } from "three"
 
+import Circle from "./atoms/circle"
 import Letter from "./atoms/letter"
-import BasicLine, { MultipleGradientLines } from "./atoms/line"
+import BasicLine, { BezierCurve, MultipleGradientLines } from "./atoms/line"
 
 export default function LineArt(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!)
@@ -18,6 +13,7 @@ export default function LineArt(props: ThreeElements["mesh"]) {
   // const [hovered, hover] = useState(false)
   // const [clicked, click] = useState(false)
 
+  // First message
   const logicLine = BasicLine(
     [new Vector3(0, 0, 0), new Vector3(-4, 16, 0)],
     0x212121
@@ -32,10 +28,7 @@ export default function LineArt(props: ThreeElements["mesh"]) {
   )
 
   // Add a plain circle in 0, 0, 0 visible from both sides
-  const circle = new Mesh(
-    new CircleGeometry(0.32, 32),
-    new MeshBasicMaterial({ color: 0x212121, side: DoubleSide })
-  )
+  const circle = Circle()
 
   const letters = [
     "A",
@@ -81,7 +74,31 @@ export default function LineArt(props: ThreeElements["mesh"]) {
     )
   }
 
-  useFrame((state, delta) => (ref.current.rotation.y += delta))
+  // Second message (Brachistochrone curve)
+  const triangle = BasicLine(
+    [new Vector3(0, 0, 0), new Vector3(0, 0, 16), new Vector3(-2, 8, 0)],
+    0x212121
+  )
+  const curve = BezierCurve(
+    [new Vector3(-2, 8, 0), new Vector3(0.7, -4, 8), new Vector3(0, 0, 16)],
+    0xc62828
+  )
+  const circle2 = Circle()
+  circle2.position.set(-1, 4.4, 8)
+  circle2.rotateY(Math.PI / 2)
+  const circle3 = Circle()
+  circle3.position.set(0, 0.4, 12)
+  circle3.rotateY(Math.PI / 2)
+  const circle4 = Circle()
+  circle4.position.set(0, -0.44, 14)
+  circle4.rotateY(Math.PI / 2)
+  const description = Letter(
+    "The shortest path is not always the fastest.",
+    0x000000,
+    [0, -1, 0]
+  )
+
+  useFrame((state, delta) => (ref.current.rotation.y += 0.5 * delta))
 
   return (
     <mesh
@@ -102,6 +119,12 @@ export default function LineArt(props: ThreeElements["mesh"]) {
       {letterObjects.map((letter, i) => (
         <primitive object={letter} key={i} />
       ))}
+
+      <primitive object={triangle} />
+      <primitive object={curve} />
+      <primitive object={circle2} />
+      <primitive object={circle3} />
+      <primitive object={circle4} />
     </mesh>
   )
 }
