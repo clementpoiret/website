@@ -1,13 +1,15 @@
 .navbar {
   position: absolute;
   bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   min-width: 256px;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 42;
-  background: #fafafa60;
+  background: #fafafa40;
   backdrop-filter: blur(8px);
   border-radius: 16px;
   padding: 8px;
