@@ -56,10 +56,10 @@ const MultipleGradientLines = (
 ) => {
   const lines = []
 
-  // Compute the coordinates at 1/4 the distance between the start and end points
+  // Compute the coordinates at 1/3 the distance between the start and end points
   // This is used to generate the random points in between
-  const x = (to.x - from.x) / 4
-  const y = (to.y - from.y) / 4
+  const x = (to.x - from.x) / 3
+  const y = (to.y - from.y) / 3
 
   for (let i = 0; i < numberOfLines; i++) {
     const randomPoint1 = new Vector3(
