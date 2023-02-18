@@ -32,7 +32,13 @@
 }
 
 .canvas {
-  background: #fff;
+  /* resulting css */
+  background: linear-gradient(
+      128deg,
+      rgba(236, 239, 241, 0.9),
+      rgba(55, 71, 79, 0.16)
+    ),
+    url(/static/noise.svg);
 }
 
 .code {
