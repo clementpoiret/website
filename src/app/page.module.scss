@@ -8,39 +8,6 @@
   background: #fff;
 }
 
-.scene {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.quote {
-  position: absolute;
-  top: 56vh;
-  width: 100%;
-  text-align: center;
-  z-index: 42;
-  display: block;
-  color: black;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  font-family: var(--font-mono);
-}
-
-.canvas {
-  /* resulting css */
-  background: linear-gradient(
-      128deg,
-      rgba(236, 239, 241, 0.9),
-      rgba(55, 71, 79, 0.16)
-    ),
-    url(/static/noise.svg);
-}
-
 .code {
   font-weight: 700;
   font-family: var(--font-mono);

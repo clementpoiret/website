@@ -2,8 +2,9 @@
 
 import { Canvas } from "@react-three/fiber"
 
-import styles from "@/app/page.module.css"
 import LineArt from "@/components/3d/lineart"
+
+import styles from "./background.module.scss"
 
 export default function Background() {
   const description = "A simple line art component"
