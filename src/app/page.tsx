@@ -1,9 +1,10 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 import Background from "@/components/background"
 import { DefaultIcons } from "@/components/icons/icon"
+import SplashScreen from "@/components/splash"
 import Navbar from "@/components/wm/navbar"
 
 import styles from "./page.module.scss"
@@ -15,6 +16,8 @@ const handleKeyDown = (e: KeyboardEvent) => {
 }
 
 export default function Home() {
+  const [loading, setLoading] = useState(true)
+
   // Add a keydown event listener for the entire page
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown)
@@ -24,13 +27,23 @@ export default function Home() {
     }
   }, [])
 
-  return (
-    <div className={styles.main}>
-      <Background />
+  // Add a splash screen until the page is loaded
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      setLoading(false)
+    }
+  }, [setLoading])
 
-      <Navbar>
-        <DefaultIcons />
-      </Navbar>
-    </div>
+  return (
+    <>
+      {loading && <SplashScreen />}
+      <div className={styles.main}>
+        <Background />
+
+        <Navbar>
+          <DefaultIcons />
+        </Navbar>
+      </div>
+    </>
   )
 }
