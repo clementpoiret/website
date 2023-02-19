@@ -66,9 +66,9 @@ const MultipleGradientLines = (
     // Set the second color to be green 2/8 of the time
     // and red 1/8 of the time
     const randomColor = Math.random()
-    if (randomColor < 2 / 8) {
+    if (randomColor < 1 / 8) {
       color2 = 0x2e7d32
-    } else if (randomColor < 3 / 8) {
+    } else if (randomColor < 2 / 8) {
       color2 = 0xc62828
     }
 
