@@ -1,9 +1,18 @@
+import Clock from "./clock"
 import styles from "./navbar.module.scss"
 
-const Navbar = () => {
+interface NavbarProps {
+  children?: React.ReactNode
+}
+
+const Navbar = (props: NavbarProps) => {
+  const { children } = props
+
   return (
     <div className={styles.navbar}>
-      <p className={styles.paragraph}>Website in construction</p>
+      {children}
+      <span className={styles.separator} />
+      <Clock />
     </div>
   )
 }

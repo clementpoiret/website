@@ -3,20 +3,22 @@
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 256px;
   height: 48px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   z-index: 42;
-  background: #fafafa40;
-  backdrop-filter: blur(8px);
+  background: #fafafa80;
+  backdrop-filter: blur(2px);
   border-radius: 16px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 8px;
+  gap: 8px;
 }
 
-.paragraph {
-  color: black;
-  font-size: 0.85rem;
-  font-family: var(--font-mono);
+.separator {
+  width: 1px;
+  height: 32px;
+  background: #0000001a;
 }
