@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/poiretclement
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://clementpoiret.com
+  * I am poiretclement (https://keybase.io/poiretclement) on keybase.
+  * I have a public key ASDOsYm8v3OgaSdjMCOOME1Lm8rSYd3153F55mNfGhaPDwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204e501693723d7e6733785f73f51c9df387b559d6156b42edc738724fa1b5a23a0a",
+      "host": "keybase.io",
+      "kid": "0120ceb189bcbf73a069276330238e304d4b9bcad261ddf5e77179e6635f1a168f0f0a",
+      "uid": "5218b93cffe66e53c4f4d004cfb2af19",
+      "username": "poiretclement"
+    },
+    "merkle_root": {
+      "ctime": 1677058323,
+      "hash": "db57df8b9444efbea319eb9b4229f59239f2c4ea0c2f702ed215d549400d343a64e306372190127fff368ecf59782b33ee407424f47d5ccaff225a4a741158fb",
+      "hash_meta": "603545299fa61216ac93d7554f4dfdf6893417f8d7e476ef1d51bb0828572cb6",
+      "seqno": 24091783
+    },
+    "service": {
+      "entropy": "vlBxCzxlKxi9q8w8dEgZW60a",
+      "hostname": "clementpoiret.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.2"
+  },
+  "ctime": 1677058338,
+  "expire_in": 504576000,
+  "prev": "4d38745f4a4699ec80feed21a47fb8d35656c006f1ab2659d519865c20ff4b33",
+  "seqno": 33,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgzrGJvL9zoGknYzAjjjBNS5vK0mHd9edxeeZjXxoWjw8Kp3BheWxvYWTESpcCIcQgTTh0X0pGmeyA/u0hpH+401ZWwAbxqyZZ1RmGXCD/SzPEIC/aEwi84VUUE5XVQNP08C51QACSSkowONuCfG59fIbBAgHCo3NpZ8RAfDF5dF1yXB0R09fSMgRlz9yh21hE3XpwcNqsIK4S3VNtibri65f0iqtgbjCP3QN9YQqTyDjztBGjivbKwc4dDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFeVwtrQMD5AEbz9sVbv5Nw0ZlLEGJd+bCvhKTpKdVYfo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/poiretclement
+
+==================================================================
