@@ -9,10 +9,14 @@ const Navbar = (props: NavbarProps) => {
   const { children } = props
 
   return (
-    <div className={styles.navbar}>
-      {children}
-      <span className={styles.separator} />
-      <Clock />
+    <div className={styles.footer}>
+      <div className={styles.navbar}>{children}</div>
+      <div className={styles.navbar}>
+        <p className={styles.paragraph}>Website under construction</p>
+      </div>
+      <div className={styles.navbar}>
+        <Clock />
+      </div>
     </div>
   )
 }
