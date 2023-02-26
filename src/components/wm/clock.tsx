@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react"
 
+import Defaults from "@/utils/constants"
+import { useMediaQuery } from "@/utils/useMediaQuery"
+
 import styles from "./clock.module.scss"
 
 const Clock = () => {
   const [time, setTime] = useState(new Date())
+  const isXs = useMediaQuery(Defaults.breakpoints.xs)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -27,7 +31,7 @@ const Clock = () => {
       </span>
       <span className={styles.date}>
         {time.toLocaleDateString("fr-FR", {
-          weekday: "short",
+          weekday: isXs ? undefined : "short",
           year: "2-digit",
           month: "short",
           day: "numeric",

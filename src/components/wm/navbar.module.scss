@@ -16,7 +16,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #171414;
+  background: var(--black);
   border-radius: 32px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 8px;
@@ -26,12 +26,12 @@
 .separator {
   width: 1px;
   height: 32px;
-  background: #0000001a;
+  background: var(--light-gray);
 }
 
 .paragraph {
   text-align: center;
-  color: #f7f3f2;
+  color: var(--white);
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
