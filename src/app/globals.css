@@ -10,6 +10,12 @@
   --dark-gray: #6b6c8d;
   --light-gray: #9a97b8;
   --accent: #d4ba85;
+  --red: #c83e4d;
+  --green: #32a287;
+
+  --accent-hover: #dfcca4;
+  --red-hover: #d2606d;
+  --green-hover: #44c5a7;
 }
 
 * {

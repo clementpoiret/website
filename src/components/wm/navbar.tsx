@@ -12,12 +12,8 @@ const Navbar = (props: NavbarProps) => {
   const { children } = props
   const isXs = useMediaQuery(Defaults.breakpoints.xs)
 
-  const footerStyle = {
-    justifyContent: isXs ? "center" : "space-between",
-  }
-
   return (
-    <div className={styles.footer} style={footerStyle}>
+    <div className={styles.footer}>
       {isXs ? (
         <div className={styles.navbar}>
           {children}

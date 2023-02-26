@@ -1,0 +1,29 @@
+.manager {
+  // The manager fit the whole screen except the bottom bar
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  z-index: 100;
+  margin: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  // each row should take 1/2 of the screen
+  grid-template-rows: 44.5vh;
+}
+
+.placeholder {
+  background-color: var(--black);
+  color: white;
+  padding: 1rem;
+}
+
+@media (min-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
